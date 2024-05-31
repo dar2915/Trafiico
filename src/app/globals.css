@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:focus {
+  outline: none;
+}
+
+.styled-select select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  /* margin-right: 2rem; */
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .no-print .print {
+    display: flex !important;
+  }
+
+  .print-border {
+    border: none !important;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulseCircle {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulseCircle2 {
+  animation: pulseCircle 2.5s infinite;
+}
+
+.pulseCircle1 {
+  animation: pulseCircle 6s infinite;
+}
+
+.morph {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.morph-active {
+  transform: scale(1.2);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.circle-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border: 10px dotted #000;
+  border-radius: 50%;
+  animation: spinAndScale 1.5s linear infinite;
+}
+
+@keyframes spinAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* report print page */
+.table-td {
+  @apply table-td-unique border-l;
+}
+
+.table-td-unique {
+  @apply px-3 py-2 sm:px-4 sm:py-3 whitespace-nowrap border-black;
+}
+
+.height-custom {
+  height: calc(100vh - 1.5rem);
+}
+
+/* table, th, td {
+  border: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 0;
+} */
